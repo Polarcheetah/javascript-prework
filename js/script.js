@@ -5,6 +5,10 @@
 
 var argButtonName, buttonPaper, buttonRock, buttonScissors, buttonTest;
 
+
+buttonPaper = document.getElementById('button-paper');
+buttonRock = document.getElementById('button-rock');
+buttonScissors = document.getElementById('button-scissors');
 /**
  * Describe this function...
  */
@@ -63,11 +67,11 @@ displayResult(playerMove, computerMove);
 }
 
 
-buttonTest = document.getElementById('button-test');
-buttonTest.addEventListener('click', function(){ buttonClicked('Guzik TEST'); });
-buttonPaper = document.getElementById('button-paper');
-buttonPaper.addEventListener('click', function(){ buttonClicked('Guzik Papier'); });
-buttonRock = document.getElementById('button-rock');
-buttonRock.addEventListener('click', function(){ buttonClicked('Guzik Kamień'); });
-buttonScissors = document.getElementById('button-scissors');
-buttonScissors.addEventListener('click', function(){ buttonClicked('Guzik Nożyce'); });
+//buttonTest = document.getElementById('button-test');
+//buttonTest.addEventListener('click', function(){ buttonClicked('Guzik TEST'); });
+
+buttonPaper.addEventListener('click', function(){ buttonClicked('papier'); });
+
+buttonRock.addEventListener('click', function(){ buttonClicked('kamień'); });
+
+buttonScissors.addEventListener('click', function(){ buttonClicked('nożyce'); });
