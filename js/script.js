@@ -3,12 +3,13 @@
 
 
 
-var argButtonName, buttonPaper, buttonRock, buttonScissors, buttonTest, playerWins, computerWins, playResult;
+var argButtonName, buttonPaper, buttonRock, buttonScissors, buttonTest, playerWins, computerWins, playResult, buttonReset;
 
 
 buttonPaper = document.getElementById('button-paper');
 buttonRock = document.getElementById('button-rock');
 buttonScissors = document.getElementById('button-scissors');
+buttonReset = document.getElementById('button-reset');
 playerWins = 0;
 computerWins = 0;
 
@@ -54,7 +55,7 @@ function displayResult(argPlayerMove, argComputerMove) {
     printMessage('Wygrywasz!');
     playerWins++;
   } else if (argPlayerMove == argComputerMove) {
-    printMessage('Remis');
+    printMessage('Remis!');
   } else {
     printMessage('Przegrywasz :(');
     computerWins++;
@@ -64,9 +65,12 @@ function displayResult(argPlayerMove, argComputerMove) {
   console.log("Wynik: " + playResult);
   printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
   document.getElementById("playResult").innerHTML = playResult;
+  
 
 
 }
+
+
 
 console.log('wybór ruchu gracza to: ' + playerInput);
 
@@ -81,7 +85,12 @@ displayResult(playerMove, computerMove);
 
 }
 
-
+function ResetResult () {
+  playerWins = 0;
+  computerWins = 0;
+  playResult = playerWins + " - " + computerWins;
+  document.getElementById("playResult").innerHTML = playResult;
+}
 
 //buttonTest = document.getElementById('button-test');
 //buttonTest.addEventListener('click', function(){ buttonClicked('Guzik TEST'); });
@@ -91,4 +100,6 @@ buttonPaper.addEventListener('click', function(){ buttonClicked('papier'); });
 buttonRock.addEventListener('click', function(){ buttonClicked('kamień'); });
 
 buttonScissors.addEventListener('click', function(){ buttonClicked('nożyce'); });
+
+buttonReset.addEventListener('click', function(){ ResetResult(); });
 

@@ -3,18 +3,32 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Kamień, papier, nożyce</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Work+Sans&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 	<div class="container">
-		<div id="buttons">
-			<button id="button-rock">Kamień</button>
-			<button id="button-paper">Papier</button>
-			<button id="button-scissors">Nożyce</button>
+		<div class="header">
+			<h1>papier-kamień-nożyce</h1>
 		</div>
-		<div id="result">
-			<p>Wynik:</p>
-			<p id="playResult">result</p>
+		<div class="game-rules">
+			<h3>Zasady gry</h3>
+			<p>Wybierz jedną z opcji: kamień, papier lub nożyce. Komputer również dokona wyboru. Wynik wyświetli się na ekranie.</p>
+		</div>
+		<div class="buttons" id="buttons">
+			<button id="button-rock"><i class="far fa-hand-rock"></i></button>
+			<button id="button-paper"><i class="far fa-hand-paper"></i></button>
+			<button id="button-scissors"><i class="far fa-hand-scissors"></i></button>
+		</div>
+		<div class="result" id="result">
+			<div class="resultDisplay">
+				<p>Wynik:</p>
+				<p id="playResult">0 - 0</p>
+			</div>
+			<button id="button-reset">Resetuj wynik</button>
 		</div>
 		<div id="messages"></div>
 	</div>
