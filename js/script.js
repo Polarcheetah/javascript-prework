@@ -3,15 +3,16 @@
 
 
 
-var argButtonName, buttonPaper, buttonRock, buttonScissors, buttonTest, playerWins, computerWins, playResult, buttonReset;
+let buttonPaper, buttonRock, buttonScissors, playResult, buttonReset;
+let playerWins = 0;
+let computerWins = 0;
 
 
 buttonPaper = document.getElementById('button-paper');
 buttonRock = document.getElementById('button-rock');
 buttonScissors = document.getElementById('button-scissors');
 buttonReset = document.getElementById('button-reset');
-playerWins = 0;
-computerWins = 0;
+
 
 /**
  * Describe this function...
@@ -20,7 +21,7 @@ function buttonClicked(argButtonName) {
   clearMessages();
   console.log(argButtonName + ' został kliknięty');
 
-  var argMoveId, argPlayerMove, argComputerMove, computerMove, playerMove, randomNumber, playerInput;
+  var computerMove, playerMove, randomNumber, playerInput;
 
 /**
  * Describe this function...
