@@ -1,20 +1,13 @@
+//let buttonPaper, buttonRock, buttonScissors, buttonReset;
 
-
-
-
-
-const buttonPaper, buttonRock, buttonScissors, buttonReset;
+let buttonPaper = document.getElementById('button-paper');
+let buttonRock = document.getElementById('button-rock');
+let buttonScissors = document.getElementById('button-scissors');
+let buttonReset = document.getElementById('button-reset');
 
 let playerWins = 0;
 let computerWins = 0;
-let playResult;
-
-buttonPaper = document.getElementById('button-paper');
-buttonRock = document.getElementById('button-rock');
-buttonScissors = document.getElementById('button-scissors');
-buttonReset = document.getElementById('button-reset');
-
-
+let playResult = playerWins + " - " + computerWins;
 /**
  * Describe this function...
  */
@@ -22,7 +15,9 @@ function buttonClicked(argButtonName) {
   clearMessages();
   console.log(argButtonName + ' został kliknięty');
 
-  var computerMove, playerMove, randomNumber, playerInput;
+  let computerMove, playerMove, randomNumber, playerInput;
+
+  
 
 /**
  * Describe this function...
@@ -45,7 +40,7 @@ function getMoveName(argMoveId) {
  * Describe this function...
  */
 function displayResult(argPlayerMove, argComputerMove) {
-  playResult = playerWins + " - " + computerWins;
+  
   console.log('wywołano funkcję displayResults z argumentami: ' + argPlayerMove + ', ' + argComputerMove);
   if (argPlayerMove == 'papier' && argComputerMove == 'kamień') {
     printMessage('Wygrywasz!');
@@ -62,17 +57,16 @@ function displayResult(argPlayerMove, argComputerMove) {
     printMessage('Przegrywasz :(');
     computerWins++;
   }
+  playResult = playerWins + " - " + computerWins;
+  
   console.log("Liczba zwycięstw gracza: " + playerWins);
   console.log("Liczba zwycięstw komputera: " + computerWins);
+  document.getElementById("playResult").innerHTML = playResult;
   console.log("Wynik: " + playResult);
   printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
-  document.getElementById("playResult").innerHTML = playResult;
   
-
-
+  
 }
-
-
 
 console.log('wybór ruchu gracza to: ' + playerInput);
 
@@ -83,6 +77,7 @@ randomNumber = Math.floor(Math.random() * 3 + 1);
 console.log('wylosowana liczba to: ' + randomNumber);
 computerMove = getMoveName(randomNumber);
 console.log('ruch komputera to: ' + computerMove);
+
 displayResult(playerMove, computerMove);
 
 }
