@@ -3,10 +3,11 @@
 
 
 
-let buttonPaper, buttonRock, buttonScissors, playResult, buttonReset;
+const buttonPaper, buttonRock, buttonScissors, buttonReset;
+
 let playerWins = 0;
 let computerWins = 0;
-
+let playResult;
 
 buttonPaper = document.getElementById('button-paper');
 buttonRock = document.getElementById('button-rock');
