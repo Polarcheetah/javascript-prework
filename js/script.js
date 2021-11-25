@@ -8,7 +8,6 @@ let playerWins = 0;
 let computerWins = 0;
 let playResult = `${playerWins} - ${computerWins}`;
   
-
 function buttonClicked(argButtonName) {
   clearMessages();
   console.log(`${argButtonName} został kliknięty`);
