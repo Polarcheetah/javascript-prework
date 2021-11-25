@@ -1,8 +1,8 @@
 
-let buttonPaper = document.getElementById('button-paper');
-let buttonRock = document.getElementById('button-rock');
-let buttonScissors = document.getElementById('button-scissors');
-let buttonReset = document.getElementById('button-reset');
+const buttonPaper = document.getElementById('button-paper');
+const buttonRock = document.getElementById('button-rock');
+const buttonScissors = document.getElementById('button-scissors');
+const buttonReset = document.getElementById('button-reset');
 
 let playerWins = 0;
 let computerWins = 0;
@@ -14,15 +14,17 @@ function buttonClicked(argButtonName) {
 
   function getMoveName(argMoveId) {
     console.log(`wywołano funkcję getMoveName z argumentem: ${argMoveId}`);
-    if (argMoveId == 1) {
-     return 'kamień';
-    } else if (argMoveId == 2) {
-      return 'papier';
-    } else if (argMoveId == 3) {
-      return 'nożyce';
-    } else {
-      printMessage(`Nie znam ruchu o id ${argMoveId}. Zakładam, że chodziło o "kamień".`);
-      return 'kamień';
+  
+    switch(argMoveId) {
+      case 1:
+        return 'kamień';
+      case 2:
+        return 'papier';        
+      case 3:
+        return 'nożyce';
+      default:
+        printMessage(`Nie znam ruchu o id ${argMoveId}. Zakładam, że chodziło o "kamień".`);
+        return 'kamień';
     }
   }
 
@@ -31,24 +33,24 @@ function buttonClicked(argButtonName) {
     console.log(`wywołano funkcję displayResults z argumentami: ${argPlayerMove}, ${argComputerMove}`);
     
     switch(true) {
-      case (argPlayerMove =='papier' && argComputerMove =='kamień'):
+      case (argPlayerMove ==='papier' && argComputerMove ==='kamień'):
         printMessage('Wygrywasz!');
-        playerWins++;
+        playerWins += 1;
         break;
-      case (argPlayerMove =='kamień' && argComputerMove =='nożyce'):
+      case (argPlayerMove ==='kamień' && argComputerMove ==='nożyce'):
         printMessage('Wygrywasz!');
-        playerWins++;
+        playerWins += 1;
         break;
-      case (argPlayerMove =='nożyce' && argComputerMove =='papier'):
+      case (argPlayerMove ==='nożyce' && argComputerMove ==='papier'):
         printMessage('Wygrywasz!');
-        playerWins++;
+        playerWins += 1;
         break;
-      case (argPlayerMove == argComputerMove):
+      case (argPlayerMove === argComputerMove):
         printMessage('Remis!');
         break;
       default:
         printMessage('Przegrywasz :(');
-        computerWins++;
+        computerWins += 1;
         break;
     }
 
@@ -60,13 +62,11 @@ function buttonClicked(argButtonName) {
     printMessage(`Zagrałem ${argComputerMove}, a Ty ${argPlayerMove}`);
   }
 
-  let computerMove, playerMove, randomNumber;
-
-  playerMove = argButtonName;
+  const playerMove = argButtonName;
   console.log(`ruch gracza to: ${playerMove}`);
-  randomNumber = Math.floor(Math.random() * 3 + 1);
+  const randomNumber = Math.floor(Math.random() * 3 + 1);
   console.log(`wylosowana liczba to: ${randomNumber}`);
-  computerMove = getMoveName(randomNumber);
+  const computerMove = getMoveName(randomNumber);
   console.log(`ruch komputera to: ${computerMove}`);
   displayResult(playerMove, computerMove);
 }
