@@ -24,7 +24,6 @@ body {
     padding: 0;
     margin: 0 auto;
     background-color: #f5f6fa;
-   
 }
 
 .container h1 {
@@ -36,22 +35,8 @@ body {
     position: relative;
     color: $color-main;
     margin-bottom: 0;
-
 }
 
-
-
-/*h1::after {
-    content: '';
-    background-color: $color-main;
-    width: 500px;
-    height: 5px;
-    position: absolute;
-    bottom: 5px;
-    left: 50%;
-    transform: translateX(-50%);
-
-}*/ 
 /* game rules */
 .container h3 {
     font-size: 24px;
@@ -87,15 +72,13 @@ body {
 .buttons button:hover {
     cursor: pointer;
     background-color: $color-main;
-   
-
 }
+
 .buttons i {
     font-size: 36px;
     color: $color-main;
     border: none;
-    background-color: inherit;
-    
+    background-color: inherit; 
 }
 
 .buttons button:hover i {
@@ -107,7 +90,6 @@ body {
 .result {
     display: flex;
     flex-direction: column;
-   // justify-content: center;
     align-items: center;
     width: 70%;
     padding: 0 0 50px;
@@ -125,7 +107,7 @@ body {
 }
 
 .result p:first-of-type{
-   font-weight: bold;
+    font-weight: bold;
 }
 
 .result button {
@@ -137,7 +119,6 @@ body {
     margin: 10px 0;
     padding: 10px 20px;
     border-radius: 10px;
-
 }
 
 .result button:hover {
